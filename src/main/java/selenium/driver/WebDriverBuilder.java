@@ -25,6 +25,7 @@ public class WebDriverBuilder {
     private String userAgent;
     private boolean disableCookies;
     private String password;
+    private boolean enableCookies;
 
     public WebDriverBuilder(WebDriverConfig webDriverConfig) {
         this.webDriverConfig = webDriverConfig;
@@ -40,6 +41,9 @@ public class WebDriverBuilder {
 
     public void disableCookies(boolean cookies) {
         this.disableCookies = cookies;
+    }
+public void enableCookies(boolean cookies) {
+        this.enableCookies = cookies;
     }
     public void setPassword(String password){
           this.password = password;
