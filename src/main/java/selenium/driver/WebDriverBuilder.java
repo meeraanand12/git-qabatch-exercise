@@ -24,6 +24,7 @@ public class WebDriverBuilder {
     private final WebDriverConfig webDriverConfig;
     private String userAgent;
     private boolean disableCookies;
+    private String password;
 
     public WebDriverBuilder(WebDriverConfig webDriverConfig) {
         this.webDriverConfig = webDriverConfig;
@@ -39,6 +40,10 @@ public class WebDriverBuilder {
 
     public void disableCookies(boolean cookies) {
         this.disableCookies = cookies;
+    }
+    public void setPassword(String password){
+          this.password = password;
+   
     }
 
 
@@ -75,6 +80,8 @@ public class WebDriverBuilder {
                 phantomJsWebDriver.manage().timeouts().setScriptTimeout(webDriverConfig.getDomMaxScriptRunTime(), SECONDS);
                 phantomJsWebDriver.manage().window().maximize();
                 return phantomJsWebDriver;
+                return;
+
             default:
                 MarionetteDriverManager.getInstance().setup();
                 FirefoxDriver firefoxDriver = new FirefoxDriver(capabilities);

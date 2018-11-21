@@ -41,6 +41,7 @@ public enum UserAgents {
 
     UserAgents(final String value) {
         this.value = value;
+        return;
     }
 
     public String getValue() {
